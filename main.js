@@ -1,5 +1,23 @@
-const cells=document.querySelectorAll(".item")
 const resetBtn=document.getElementById('reset')
+const gimeboard = document.querySelector(".gameboard");
+let acceptvalues=[]
+
+for (let i = 0; i < 400; i++) {
+    // Create a new div element
+    const div = document.createElement("div");
+  
+    // Set the class attribute to "item"
+    div.className = "item";
+  
+    // Set the ID attribute with a value ranging from 0 to 399
+    div.id = i;
+  
+    // Append the div to the container
+    gimeboard.appendChild(div);
+  }
+  const cells=document.querySelectorAll(".item")
+
+
 
 player1={
     symbol: '<i class="fas fa-times"></i>',
@@ -13,20 +31,21 @@ player2={
 }
 let playerturn=true;
 let usedCells=[];
-const winCombos=[
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
 
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
+// const winCombos=[
+//     [0,1,2],
+//     [3,4,5],
+//     [6,7,8],
 
-    [0,4,8],
-    [2,4,6]
-];
+//     [0,3,6],
+//     [1,4,7],
+//     [2,5,8],
 
-for(let i=0;i<9;i++)
+//     [0,4,8],
+//     [2,4,6]
+// ];
+
+for(let i=0;i<400;i++)
 {
     cells[i].addEventListener('click',()=>{
         if(isEmpty(i))
@@ -34,14 +53,14 @@ for(let i=0;i<9;i++)
             if(playerturn)
             {
                  addSymbol(player1,i)
-                 checkWinner(player1)
+                //  checkWinner(player1)
                  console.log( 'p1'+player1.played)
                  playerturn=false  
             }
             else
             {
                 addSymbol(player2,i)
-                checkWinner(player2)
+                // checkWinner(player2)
                 console.log( 'p2'+player2.played)
         
                 playerturn=true
@@ -62,6 +81,10 @@ function addSymbol(player,i)
     player.played.push(i)
     usedCells.push(i)
 }
+
+
+
+
 function checkWinner(player)
 {
     winCombos.some(combo=>{
