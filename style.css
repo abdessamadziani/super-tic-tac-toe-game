@@ -4,14 +4,17 @@
     box-sizing: border-box;
 }
 body{
-    background-color:#F5F5DC ;
-
+    background: rgb(80,215,217);
+    background: linear-gradient(34deg, rgba(80,215,217,1) 22%, rgba(221,224,54,1) 51%, rgba(253,187,45,1) 90%);
+    height: 100vh;
 }
 :root {
     --orange: #E9B824;
+    --white: #EEEDED;
+
 }
 h1{
-    color: var(--orange);
+    color: var(--white);
     text-align: center;
 }
 .btn 
@@ -22,17 +25,45 @@ h1{
     height: 30px;
     text-align: center;
     border: none;
+    font-weight: bolder;
     border-radius: 10px;
-    background-color: #f0d993;
-    color: white;
+    background: rgb(2,0,36);
+    background: linear-gradient(63deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);    color: white;
 }
 
-
+section
+{
+    display: flex;
+    margin: 0 15px;
+}
+.imgspace
+{
+    width: 80%;
+    height: 50%;
+    margin: auto;
+}
+.imgspace img
+{
+    width: 100%;
+}
+.score 
+{
+    width: 80%;
+    margin-top:50px;
+}
+.score span
+{
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    display: block;
+    margin: auto;
+}
 .gameboard 
 {
     margin-top: 40px;
-    width: 50%;
-    margin: auto;
+    width: 40%;
+    margin: auto auto;
     display: grid;
     gap: 4px;
     grid-template-columns: repeat(20,1fr);
@@ -48,8 +79,46 @@ h1{
    align-items: center;
    border: 1px solid red;
    text-align: center;
-   height: 30px;
+   height: 15px;
    
     
 }
+.bgone
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color:white;
+   border:none;
+   font-weight: 400;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   background-color:#3085C3;
+}
+
+.bgtwo
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color:white;
+   font-weight: 400;
+   border:none;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   background-color:#D80032;
+}
+.leftside 
+{
+    width: 25%;
+   ;
+
+}
+.rightside
+{
+    width: 25%;
+   
+
+}
+
 
